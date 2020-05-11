@@ -1,0 +1,34 @@
+{
+    "name": "json-transients",
+    "version": "0.0.1",
+    "description": "A simple & minimal template engine to build semantic templates for JSON objects and strings.",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "babel src -d ./dist",
+        "dev": "babel src -d ./dist --watch",
+        "test": "babel src -d ./dist && jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pichsenmeister/json-transients.git"
+    },
+    "keywords": [
+        "json",
+        "transient",
+        "js object to json",
+        "js object",
+        "filter",
+        "json tool",
+        "query"
+    ],
+    "author": "David Pichsenmeister <opensource@pichsenmeister.com>",
+    "homepage": "https://github.com/pichsenmeister/json-transients",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {
+        "@babel/cli": "^7.8.4",
+        "@babel/core": "^7.9.6",
+        "@babel/preset-env": "^7.9.6",
+        "jest": "^26.0.1"
+    }
+}
