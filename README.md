@@ -66,6 +66,7 @@ This will remove all transient fields and return a valid JSON object:
 Each instances of JST take a configuration object with following properties:
 
 | Property | Required | Default | Description |
+| ---- | ---- | ---- | ---- |
 | `prefix` | no | `$_` | Prefix for transients fields that are being removed |
 | `transformUndefined` | no | `true` | Sets all `undefined` properties to `null`. If set to `false` all `undefined` properties will be removed. You can also define a custom handler. |
 | `transformDate` | no | `toISOString()` | Sets all date properties to ISO string. |
