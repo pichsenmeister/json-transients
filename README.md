@@ -73,7 +73,7 @@ Each instances of JST take a configuration object with following properties:
 | ---- | ---- | ---- | ---- |
 | `prefix` | no | `$_` | Prefix for transients fields that are being removed |
 | `transformUndefined` | no | `true` | Sets all `undefined` properties to `null`. If set to `false` all `undefined` properties will be removed. You can also define a custom handler. |
-| `transformDate` | no | `toISOString()` | Sets all date properties to ISO string. |
+| `transformDate` | no | `toISOString()` | Define a custom handler to transfrom `Date` objects. Sets all date properties to ISO string by default. |
 
 ### Example
 ```
