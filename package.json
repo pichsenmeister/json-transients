@@ -1,7 +1,7 @@
 {
     "name": "json-transients",
-    "version": "0.0.1",
-    "description": "A simple & minimal template engine to build semantic templates for JSON objects and strings.",
+    "version": "0.0.2",
+    "description": "A simple and minimalist wrapper library to deal with JavaScript object to JSON transformations and remove transient fields.",
     "main": "dist/index.js",
     "scripts": {
         "build": "babel src -d ./dist",
