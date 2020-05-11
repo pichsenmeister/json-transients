@@ -1,5 +1,9 @@
 # json-transients
 
+
+<a href="https://www.npmjs.com/package/json-transients">
+    <img src="https://img.shields.io/npm/v/json-transients.svg" alt="npm version" />
+</a>
 <a href="https://david-dm.org/pichsenmeister/json-transients">
     <img src="https://david-dm.org/pichsenmeister/json-transients.svg" alt="Dependency Status" />
 </a>
