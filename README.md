@@ -1,6 +1,5 @@
 # json-transients
 
-
 <a href="https://www.npmjs.com/package/json-transients">
     <img src="https://img.shields.io/npm/v/json-transients.svg" alt="npm version" />
 </a>
@@ -11,8 +10,7 @@
     <img src="https://david-dm.org/pichsenmeister/json-transients/dev-status.svg" alt="devDependency Status" />
 </a>
 
-
-A simple and minimalist wrapper library to deal with JavaScript object to JSON transformations and remove transient fields.
+A simple and minimalist wrapper library to deal with JavaScript object to JSON transformations that supports removing transient fields.
 
 * [Installation](#installation)
 * [Getting started](#getting-started)
