@@ -44,9 +44,9 @@ const json = {
 
 ... and transform it to remove transient fiels (properties prefixed with `$_` in this example)
 ```
-const JST = require('json-transients')
+const JsonTransients = require('json-transients')
 
-const jst = new JST()
+const jst = new JsonTransients()
 const result = jst.transform(json)
 ```
 
@@ -63,16 +63,17 @@ This will remove all transient fields and return a valid JSON object:
 
 ## Config
 
-Each instances of JST take a configuration object with following properties:
+Each instance of `JsonTransients` takes a configuration object with following properties:
 
 | Property | Required | Default | Description |
+| ----- | ----- | ----- | ----- |
 | `prefix` | no | `$_` | Prefix for transients fields that are being removed |
 | `transformUndefined` | no | `true` | Sets all `undefined` properties to `null`. If set to `false` all `undefined` properties will be removed. You can also define a custom handler. |
 | `transformDate` | no | `toISOString()` | Sets all date properties to ISO string. |
 
 ### Example
 ```
-const jst = new JST({
+const jst = new JsonTransients({
     // use a custom prefix
     prefix: 'CUSTOM_`,
     // transform all undefined properties to "not_defined" string

@@ -1,8 +1,8 @@
-const JST = require("../dist/index")
+const JsonTransients = require("../dist/index")
 const payload = require("./payload")
 
 test("it should throw an `invalid JSON` error if payload is not valid JSON", () => {
-    const jst = new JST()
+    const jst = new JsonTransients()
 
     expect(() => {
         jst.transform("string")
@@ -34,14 +34,14 @@ test("it should throw an `invalid JSON` error if payload is not valid JSON", () 
 })
 
 test("it should not throw an `invalid JSON` error if payload is valid JSON", () => {
-    const jst = new JST()
+    const jst = new JsonTransients()
 
     jst.transform({})
     jst.transform([])
 })
 
 test("it should remove all functions on objects", () => {
-    const jst = new JST()
+    const jst = new JsonTransients()
     let result = jst.transform(payload.obj)
 
     expect(result.hasOwnProperty('fn')).toBe(false)
@@ -56,7 +56,7 @@ test("it should remove all functions on objects", () => {
 })
 
 test("it should remove all undefined properties", () => {
-    const jst = new JST()
+    const jst = new JsonTransients()
     let result = jst.transform(payload.obj)
 
     expect(result.hasOwnProperty('isUndefined')).toBe(false)
@@ -71,7 +71,7 @@ test("it should remove all undefined properties", () => {
 })
 
 test("it should set all undefined properties to null if config is set", () => {
-    const jst = new JST({ transformUndefined: true })
+    const jst = new JsonTransients({ transformUndefined: true })
     let result = jst.transform(payload.obj)
 
     expect(result.isUndefined).toBe(null)
@@ -86,7 +86,7 @@ test("it should set all undefined properties to null if config is set", () => {
 })
 
 test("it should transform all undefined properties to custom value", () => {
-    const jst = new JST({
+    const jst = new JsonTransients({
         transformUndefined: () => {
             return 'undefined'
         }
@@ -105,7 +105,7 @@ test("it should transform all undefined properties to custom value", () => {
 })
 
 test("it should transform all dates to ISO string", () => {
-    const jst = new JST()
+    const jst = new JsonTransients()
     let result = jst.transform(payload.obj)
 
     const dateStr = payload.date.toISOString()
@@ -122,7 +122,7 @@ test("it should transform all dates to ISO string", () => {
 })
 
 test("it should transform all dates to custom value", () => {
-    const jst = new JST({
+    const jst = new JsonTransients({
         transformDate: (value) => {
             return value.getTime()
         }
@@ -143,7 +143,7 @@ test("it should transform all dates to custom value", () => {
 })
 
 test("it should remove all transient properties", () => {
-    const jst = new JST()
+    const jst = new JsonTransients()
     let result = jst.transform(payload.obj)
 
     expect(result.hasOwnProperty('$_transient')).toBe(false)
@@ -158,7 +158,7 @@ test("it should remove all transient properties", () => {
 })
 
 test("it should remove all transient properties with custom prefix", () => {
-    const jst = new JST({ prefix: 'XX_' })
+    const jst = new JsonTransients({ prefix: 'XX_' })
     let result = jst.transform(payload.obj)
 
     expect(result.hasOwnProperty('XX_custom_prefix')).toBe(false)
