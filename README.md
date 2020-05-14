@@ -1,5 +1,8 @@
 # json-transients
 
+<a href="https://www.npmjs.com/package/json-transients">
+    <img src="https://img.shields.io/npm/v/json-transients.svg" alt="npm version" />
+</a>
 <a href="https://david-dm.org/pichsenmeister/json-transients">
     <img src="https://david-dm.org/pichsenmeister/json-transients.svg" alt="Dependency Status" />
 </a>
@@ -7,8 +10,7 @@
     <img src="https://david-dm.org/pichsenmeister/json-transients/dev-status.svg" alt="devDependency Status" />
 </a>
 
-
-A simple and minimalist wrapper library to deal with JavaScript object to JSON transformations and remove transient fields.
+A simple and minimalist wrapper library to deal with JavaScript object to JSON transformations that supports removing transient fields.
 
 * [Installation](#installation)
 * [Getting started](#getting-started)
@@ -66,10 +68,10 @@ This will remove all transient fields and return a valid JSON object:
 Each instance of `JsonTransients` takes a configuration object with following properties:
 
 | Property | Required | Default | Description |
-| ----- | ----- | ----- | ----- |
+| ---- | ---- | ---- | ---- |
 | `prefix` | no | `$_` | Prefix for transients fields that are being removed |
 | `transformUndefined` | no | `true` | Sets all `undefined` properties to `null`. If set to `false` all `undefined` properties will be removed. You can also define a custom handler. |
-| `transformDate` | no | `toISOString()` | Sets all date properties to ISO string. |
+| `transformDate` | no | `toISOString()` | Define a custom handler to transfrom `Date` objects. Sets all date properties to ISO string by default. |
 
 ### Example
 ```
